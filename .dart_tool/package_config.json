@@ -98,6 +98,18 @@
       "languageVersion": "3.8"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///Volumes/XA-MAC-03-EPRO/AhmedUsman/flutter/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
+    },
+    {
+      "name": "fluttertoast",
+      "rootUri": "file:///Users/xa-mac-03/.pub-cache/hosted/pub.dev/fluttertoast-9.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "http_parser",
       "rootUri": "file:///Users/xa-mac-03/.pub-cache/hosted/pub.dev/http_parser-4.1.2",
       "packageUri": "lib/",
