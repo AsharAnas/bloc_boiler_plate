@@ -11,7 +11,9 @@ class Endpoints {
   static String userById(int id) => '/users/$id';
 
   // Auth (test API: reqres.in)
-  static const String login = 'https://reqres.in/api/login';
+  static const String login = '/pub/authenticate';
+  static const String register = '/pub/register';
+  static const String getMe = '/pvt/customer';
 
   // Build path with optional query params for flexibility
   static String withQuery(String path, Map<String, dynamic>? query) {

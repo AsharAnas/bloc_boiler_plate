@@ -4,7 +4,7 @@ class ApiConstants {
 
   static const String baseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'https://jsonplaceholder.typicode.com',
+    defaultValue: 'https://echosync.shootplanr.com/api/app',
   );
 
   static const Duration connectTimeout = Duration(seconds: 15);

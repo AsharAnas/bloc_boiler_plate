@@ -5,8 +5,7 @@ class LoginResponse extends Equatable {
 
   final String token;
 
-  factory LoginResponse.fromJson(Map<String, dynamic> json) =>
-      LoginResponse(token: json['token'] as String);
+  factory LoginResponse.fromJson(Map<String, dynamic> json) => LoginResponse(token: json['Data']['AccessToken'] as String);
 
   @override
   List<Object?> get props => [token];

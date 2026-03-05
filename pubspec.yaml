@@ -45,6 +45,9 @@ dependencies:
   # Toast
   fluttertoast: ^9.0.0
 
+  # Local storage (token persistence)
+  shared_preferences: ^2.3.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

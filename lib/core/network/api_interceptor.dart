@@ -1,12 +1,16 @@
 import 'package:dio/dio.dart';
 
 import 'status_code_handler.dart';
+import 'token_storage.dart';
 
 /// Auth headers in [onRequest]; error side effects (e.g. 401) via [StatusCodeHandler.onStatusCode].
 class ApiInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    // options.headers['Authorization'] = 'Bearer $token';
+    final token = TokenStorage.token;
+    if (token != null && token.isNotEmpty) {
+      options.headers['Authorization'] = 'Bearer $token';
+    }
     handler.next(options);
   }
 

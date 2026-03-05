@@ -48,7 +48,7 @@ class DioClient {
   static String? _extractMessage(Response? response) {
     if (response?.data is Map<String, dynamic>) {
       final data = response!.data as Map<String, dynamic>;
-      return data['message'] as String? ?? data['error'] as String?;
+      return data['Message'] as String? ?? data['error'] as String?;
     }
     if (response?.data is String) return response!.data as String;
     return null;

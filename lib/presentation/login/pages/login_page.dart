@@ -1,3 +1,5 @@
+import 'package:bloc_boiler_plate/presentation/register/bloc/register_bloc.dart';
+import 'package:bloc_boiler_plate/presentation/register/pages/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,7 +43,9 @@ class _LoginPageState extends State<LoginPage> {
       listenWhen: (prev, curr) => (curr is LoginSuccess && prev is! LoginSuccess) || (curr is LoginError && prev is! LoginError),
       listener: (context, state) {
         if (state is LoginSuccess) {
-          context.showSnackBar('Logged in. Token: ${state.response.token}');
+          final user = state.user;
+          final msg = user != null && (user.user!.name != null || user.user!.email != null) ? 'Logged in as ${user.user!.name ?? user.user!.email}' : 'Logged in successfully';
+          context.showSnackBar(msg);
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const HomePage()));
         }
         if (state is LoginError) {
@@ -90,6 +94,14 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     const SizedBox(height: AppSpacing.xl),
                     AppButton(label: 'Login', onPressed: _submit, isLoading: isLoading),
+                    TextButton(
+                      child: Text("Register"),
+                      onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => BlocProvider(create: (_) => RegisterBloc(), child: const RegisterPage()),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

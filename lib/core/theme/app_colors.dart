@@ -26,6 +26,14 @@ class AppColors {
   static const Color textPrimary = Color(0xFF212121);
   static const Color textSecondary = Color(0xFF757575);
 
+  // Cyber / auth screen (futuristic input theme)
+  static const Color fieldAccent = Color(0xFF00E5FF); // vibrant cyan for label & focus
+  static const Color fieldBackground = Color(0xFF1C1E26); // dark blue-gray fill
+  static const Color fieldBorder = Color(0xFF64707E); // light gray/silver normal border
+  static const Color fieldPlaceholder = Color(0xFFB0B0B0); // light gray placeholder
+  static const Color fieldText = Color(0xFFFFFFFF); // white input text
+  static const Color fieldError = Color(0xFFE53935); // red for error border & message
+
   /// Builds a [ColorScheme] from these colors for [ThemeData].
   static ColorScheme get colorScheme => ColorScheme.light(
     primary: primary,

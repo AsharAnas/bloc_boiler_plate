@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 
 import '../../../../core/errors/failures.dart';
 import '../../../../data/models/login_response.dart';
+import '../../../../data/models/user.dart';
 
 sealed class LoginState extends Equatable {
   const LoginState();
@@ -27,10 +28,12 @@ final class LoginLoading extends LoginState {
 }
 
 final class LoginSuccess extends LoginState {
-  const LoginSuccess(this.response);
+  const LoginSuccess(this.response, [this.user]);
   final LoginResponse response;
+  /// Current user from getMe API (called after login with saved token).
+  final User? user;
   @override
-  List<Object?> get props => [response];
+  List<Object?> get props => [response, user];
 }
 
 final class LoginError extends LoginState {
